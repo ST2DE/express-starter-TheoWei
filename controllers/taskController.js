@@ -16,12 +16,13 @@ let taskController = {
   },
   tasklist: function(req,res){
     let taskName = req.body.taskName;
+    console.log(taskName);
     Task.create({
       title: taskName
     })
       .then(function(){
         res.redirect('/tasks');
-    })
+    });
   } 
 };
 module.exports = taskController;
