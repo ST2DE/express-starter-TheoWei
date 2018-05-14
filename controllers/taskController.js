@@ -14,5 +14,14 @@ let taskController = {
         res.json(tasks);
       });
   },
+  tasklist: function(req,res){
+    let taskName = req.body.taskName;
+    Task.create({
+      title: taskName
+    })
+      .then(function(){
+        res.redirect('/tasks');
+    })
+  }
 };
 module.exports = taskController;

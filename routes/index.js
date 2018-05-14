@@ -4,5 +4,6 @@ module.exports = function (app) {
 
   app.get('/tasks', taskController.index);
   app.get('/api/tasks', taskController.indexApi);
+  app.post('/tasks/taskList',taskController.tasklist);
 
 };
