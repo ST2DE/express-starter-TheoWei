@@ -22,6 +22,6 @@ let taskController = {
       .then(function(){
         res.redirect('/tasks');
     })
-  }
+  } 
 };
 module.exports = taskController;
