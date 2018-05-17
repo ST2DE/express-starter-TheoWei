@@ -1,0 +1,81 @@
+* {
+    font-family: '微軟正黑體';
+    
+    
+}
+body,html {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(251, 253, 144);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.box{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+#loginForm {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 10px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.loginBtn {
+    font-size: 800;
+    padding: 10px 15px;
+    border: 0px ;
+
+    background-color: rgb(212, 26, 26);
+    color: white;
+    transition: 0.5s;
+}
+.loginBtn:hover{
+    color: white;
+    background-color: #ec7344;
+}
+
+.task {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#taskForm {
+    margin-top: 10px;
+}
+.taskSend{
+    padding: 10px;
+    background-color: rgb(151, 247, 127);
+    color: rgb(31, 27, 27);
+    outline: none;
+    border: 0px ;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    text-align: left;
+    list-style: none;
+    letter-spacing: 1px;
+    padding: 5px;
+}

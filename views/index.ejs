@@ -5,22 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDoList</title>
+    <link rel="stylesheet" href="/main.css">
+    
 </head>
 <body>
-    <h2>To do List</h2>
-
-
-    <form action="/tasks/taskList" method="post">
-        <input type="text" name="taskName" value="" placeholder="輸入項目">
-        <input type="submit" value="Submit">
-    </form>
-    
-    <ul>
-        <% tasks.forEach(function(task) { %>
-            <li><a href='/task/<%= task.id %>'><%= task.id %>: <%= task.title %></a></li>
-        <% }); %> 
-    </ul> 
- 
-  
+    <h1>To do List</h1>
+    <h2 class='greeting'></h2>
+    <div class="box">
+        <form action="/tasks/Login" method="post" id="loginForm">
+            User Name<input type="text" name="userName" value="">
+            <br>
+            User Password<input type="text" name="userPassword" value="">
+            <br>
+            <input class="loginBtn" type="submit" value="Log in" >
+        </form>   
+        
+        <form action="/tasks/taskList" method="post" id="taskForm">
+            <input class="task" type="text" name="taskName" value="" placeholder="輸入項目" >
+            <input class="task taskSend" type="submit" value="Submit" >
+        </form>
+        
+        <ul>
+            <% tasks.forEach(function(task) { %>
+                <li>
+                    <a id = "<%= task.id %>" href='/tasks/edit'   >
+                        <%= task.id %>: <%= task.title %>
+                    </a>
+                </li>
+            <% }); %> 
+        </ul> 
+    </div>
+    <script>
+        
+        
+        
+    </script>
 </body>
 </html>
