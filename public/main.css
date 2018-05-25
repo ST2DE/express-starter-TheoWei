@@ -1,34 +1,56 @@
 * {
     font-family: '微軟正黑體';
-    
-    
+    /* border: 1px solid #000; */
+    outline: none;
 }
+
 body,html {
+    position: relative;
     width: 100%;
     text-align: center;
-    background-color: rgb(251, 253, 144);
+    background-color: #b83b5e;
     margin: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: #f08a5d;
 }
 .box{
-    width: 300px;
+    min-width: 300px;
+    max-width: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #6a2c70;
     border-radius: 5px;
     overflow: hidden;
+
+    box-shadow: 0px 0px  20px rgb(0,0,0,30%);
+    
+}
+h1, h2{
+    color: #f9ed69;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    text-align: left;
+    list-style: none;
+    letter-spacing: 1px;
+    padding: 5px;  
 }
 
 
-#loginForm {
-    background-color: black;
-    color: white;
+/* Login */
+#loginSignupForm {
+    background-color: #f08a5d;
+    color: #6a2c70;
     width: 100%;
     padding: 10px 0px;
 
@@ -38,44 +60,95 @@ body,html {
     flex-direction: column;
     
 }
-.loginBtn {
+.loginSignupSend {
     font-size: 800;
     padding: 10px 15px;
+
     border: 0px ;
+    border-radius: 5px;
 
-    background-color: rgb(212, 26, 26);
-    color: white;
-    transition: 0.5s;
-}
-.loginBtn:hover{
-    color: white;
-    background-color: #ec7344;
+    background-color: #6a2c70;
+    color: #f9ed69;
 }
 
-.task {
+
+/*  */
+a {
+    padding: 5px 10px;
+    font-size: 20px;
+    
+    border-radius: 5px;
+    text-decoration: none;
+    color: #f08a5d;
+    background-color: #6a2c70;
+}
+span{
+    white-space: pre-wrap;
+}
+p{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* index Message  */
+.logout{
+    background-color: #f9ed69;
+    padding: 5px 10px;
+    margin: 15px;
+}
+.txtInput {
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    font-size: 15px;
+    white-space: pre-wrap;
 }
-#taskForm {
-    margin-top: 10px;
+.mesSend{
+    padding: 7px 10px;
+    border-radius: 5px;
+
+    font-weight: 600;
+
+    background-color: #f08a5d;
+    color: #6a2c70;
+    transition: 0.3s;
 }
-.taskSend{
+.mesSend:hover{
+    box-shadow: 0px 0px 10px white;
+}
+
+.message{
+
+    transition: 0.5s;
+}
+.message:hover{
+    color: white;
+}
+.edit, .delete{
+    margin-left: 5px;
     padding: 10px;
-    background-color: rgb(151, 247, 127);
-    color: rgb(31, 27, 27);
-    outline: none;
-    border: 0px ;
+    
+    border: 3px white;
+    border-radius: 5px;
+
+    background-color: #6a2c70;
+    color: #f08a5d;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.btn{
+    letter-spacing: 2px;
+
+    border-radius: 5px;
+    border: 0;
+
+    
 }
 
 
-ul {
-    list-style: none;
-    padding: 0;
+/* item */
+#itembox{
+    margin: 10px;
 }
-li {
-    text-align: left;
-    list-style: none;
-    letter-spacing: 1px;
-    padding: 5px;expre
-}
+

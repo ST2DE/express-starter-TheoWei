@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-    <% tasks.forEach(function(task) { %>
-        <form action="/" method="POST">
-            <input type="hidden" name="taskId" value="<%= task.id %>">
-            <input type="text" name="taskItem" value="<%= task.title %>">
-            <input type="submit" formaction="/tasks/update" formmethod="post" value="修改">
-            <input type="submit" formaction="/tasks/delete" formmethod="post" value="刪除">
+    <h1>Edit Page</h1>
+    <% messages.forEach(function(message) { %>
+        <form id="itembox" action="/" method="POST">
+            <input type="hidden" name="messageId" value="<%= message.id %>">
+            <input class="txtInput" type="text" name="messageItem" value="<%= message.content %>">
+            <input class="edit" type="submit"  formaction="/index/update" formmethod="post" value="修改" >
+            <!-- input內的formaction 和 formmethod type有個前提條件是都得先包在一個form內，才能使用 -->
         </form>
     <% }); %> 
 </body>

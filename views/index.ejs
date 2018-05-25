@@ -4,35 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDoList</title>
+    <title>留言板</title>
     <link rel="stylesheet" href="/main.css">
     
 </head>
 <body>
-    <h1>To do List</h1>
-    <h2 class='greeting'></h2>
+    <h1>留言板</h1>
+    
+    <h2 class='greeting'>
+        <% if(!user){ %>
+            您尚未登入!
+        <% }else{ %>
+            <%= user%> 你好!
+        <% } %>
+    </h2>
     <div class="box">
-        <form action="/tasks/Login" method="post" id="loginForm">
-            User Name<input type="text" name="userName" value="">
-            <br>
-            User Password<input type="text" name="userPassword" value="">
-            <br>
-            <input class="loginBtn" type="submit" value="Log in" >
-        </form>   
-        
-        <form action="/tasks/taskList" method="post" id="taskForm">
-            <input class="task" type="text" name="taskName" value="" placeholder="輸入項目" >
-            <input class="task taskSend" type="submit" value="Submit" >
-        </form>
-        
+            <% if(!user){ %>
+            <a href="/index/login">登入</a>
+            <a href="/index/signup">註冊</a>
+            <% }else{ %>
+            <form action="/index/logout" method="post">
+                <input class="btn logout" type="submit"  value="登出">
+            </form>
+
+            <form action="/index/messages" method="post" id="mesForm">
+                <input class="txtInput" type="text" name="mes" value="" placeholder="留言..." >
+                <input class="btn mesSend" type="submit" value="送出" >
+            </form>
+            <% } %>         
+          
         <ul>
-            <% tasks.forEach(function(task) { %>
+            <% messages.forEach(function(message) { %>
                 <li>
-                    <a id = "<%= task.id %>" href='/tasks/edit'   >
-                        <%= task.id %>: <%= task.title %>
-                    </a>
+                    <form id="itembox" action="/" method="POST">
+                        <input type="hidden" name="messageId" value="<%= message.id %>">
+                        <a id = "<%= message.id %>" href='/index/edit'>
+                            <span class="message"><%= message.content %></span>
+                        </a>
+                        <% if(user) { %>
+                        <input type="submit" class="btn delete" formaction="/index/delete" formmethod="post" value="刪除" >
+                        <% } %>
+                    </form>
                 </li>
-            <% }); %> 
+            <% }); %>
         </ul> 
     </div>
     <script>
