@@ -9,17 +9,18 @@
 </head>
 <body>
     <h1>Sign up Page</h1>
-    <h2 style="color: #f9ed69"><%= error %></h2>
+    
     <div class="box">
         <form id="loginSignupForm" action="/index/signup/user" method="post" >
             <p>User Name</p>
             <input type="text" name="userName" value="">
             <br>
-            <p>User Name</p>
+            <p>User Password</p>
             <input type="text" name="userPassword" value="">
             <br>
             <input class="btn loginSignupSend" type="submit" value="Sign up" >  
         </form>     
-    </div>    
+    </div>   
+    <h2 style="color: #f9ed69"><%= errorUser %><%= errorPassword %></h2> 
 </body>
 </html>

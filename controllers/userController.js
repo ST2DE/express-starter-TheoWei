@@ -18,7 +18,7 @@ let userController = {
   },
   indexSignup: function(req,res){
     
-    res.render('signup',{error: req.flash('SignUpError')});
+    res.render('signup',{errorUser: req.flash('SignUpUserError'),errorPassword: req.flash('SignUpPasswordError')});
   },
   userSignup: function(req,res){
     

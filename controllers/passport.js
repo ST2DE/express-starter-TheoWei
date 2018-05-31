@@ -25,15 +25,15 @@ passport.use('login',new LocalStrategy({ //(passport optional Name,Strategy)
 },function(req,usernameValue,password,done){
     User.findOne({ where:{username:usernameValue}})//search User Table username column math value username that we input (table column,input value)    
         .then((user)=>{
-
+            console.log(user);
             if(!user){
-                return done( null, false, { message: '無此使用者' } );
-                req.flash('LoginUserError','無此使用者!');
+                return done( null, false, { message: req.flash('LoginUserError','無此使用者!') } );
+                
             }
             
             if ( user.password !== password ) {
-                return done( null, false, { message: '密錯錯誤' } );
-                req.flash('LoginPasswordError','密錯錯誤!');
+                return done( null, false, { message: req.flash('LoginPasswordError','密錯錯誤!') } );
+                
             }
             
             return done(null, user ); //done是callback傳回驗證結果，不過要記得前面加return 
@@ -52,12 +52,13 @@ passport.use('signup',new LocalStrategy({ //(OptionName,Strategy)
                 username:usernameValue
             }})
             .then((user)=>{
+                
                 if(user){
-                    req.flash('SignUpError','User exist!');
-                    return done(null,false,req.flash('info','User exists'))
+                    return done(null,false,req.flash('SignUpUserError','User exist!'))
                 }else{
                     
-                    var newUser = new User();
+                    
+                    var newUser = {};
                     newUser.username = usernameValue;
                     newUser.password = password;
                     console.log(newUser);
